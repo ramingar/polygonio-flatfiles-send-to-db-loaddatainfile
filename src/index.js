@@ -14,6 +14,8 @@ import moment from 'moment'
 
 const flatFilesFolder = config.flatFilesFolder;
 
+ConsoleLog(`${moment().format('DD-MM-YYYY HH:mm:ss')} - Start...`);
+
 fs
     .readdir(flatFilesFolder)
     .then(Map(PathJoin(path, flatFilesFolder)))
@@ -21,5 +23,5 @@ fs
     .then(PromiseAllSettled)
     .then(Map(({value}) => value))
     .then(Map(transformCsv(setWindowStartDate, moment)))
-    .then(val => val)
     .then(ConsoleLog)
+    .then(() => ConsoleLog(`${moment().format('DD-MM-YYYY HH:mm:ss')} - End...`))

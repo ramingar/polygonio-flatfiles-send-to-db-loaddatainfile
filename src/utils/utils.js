@@ -45,6 +45,7 @@ const transformCsv = (fn, params) => csv => {
         splitCSVByBreakLines,
         Map(splitCSVByFields),
         Slice(1),
+        Slice(0, -1),
         Map(fn(params)),
         Map(Join(',')),
         Join('\n')
