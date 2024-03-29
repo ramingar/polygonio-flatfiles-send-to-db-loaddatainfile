@@ -2,11 +2,15 @@
   "name": "polygon-flatfiles-send-to-db-loaddatainfile",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "rafael minguet garcía",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
 }
